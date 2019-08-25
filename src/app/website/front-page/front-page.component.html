@@ -1,0 +1,25 @@
+<nav class="nav navbar-inverse">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="#" (click)="loadHomeComponent();">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" (click)="loadSignUpComponent();">
+          <span class="glyphicon glyphicon-user"></span> Sign Up
+        </a></li>
+        <li><a href="#" (click)="loadLoginComponent();">
+          <span class="glyphicon glyphicon-log-in"></span> Login
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="jumbotron text-center">
+        <h1>{{title}}</h1>      
+        <p>Online Shopping website</p>
+  </div>
+  <div *ngIf='loadLoginCmp'>
+    <app-user-login></app-user-login>
+  </div>
+  <div *ngIf='loadSignUpCmp'>
+      <app-user-signup></app-user-signup>
+  </div>
