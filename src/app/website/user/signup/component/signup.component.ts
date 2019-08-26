@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validator } from '@angular/forms';
+import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { CustomerDTO } from '../../../../model/customer-dto';
+import { CustomerDTO } from '../../../../model/customer-dto.model';
 
 @Component({
   selector: 'app-user-signup',
@@ -10,7 +10,7 @@ import { CustomerDTO } from '../../../../model/customer-dto';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit{
-  addCustomer: FormGroup;
+  signUpCustomerData: FormGroup;
 
   constructor(
     private router: Router,
@@ -18,11 +18,14 @@ export class SignupComponent implements OnInit{
   ) {}
 
   ngOnInit(){
-    this.addCustomer = this.formBuilder.group({
-      
+    this.signUpCustomerData = this.formBuilder.group({
+      customerEmailId: ['', Validators.required],
+      customerPassword: ['', Validators.required],
+      customerMobileNumber: ['', Validators.required],
+      customerGender: ['', Validators.required]
     });
   }
   createCustomer(customerDTO: CustomerDTO){
-
+    console.debug(this.signUpCustomerData.value.customerEmailId);
   }
 }
