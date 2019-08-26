@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { CustomerDTO } from '../model/customer-dto.model';
-import { CommonConstant } from '../common/common-constant';
+import { CommonConstant } from '../common/common-constant.model';
 
 @Injectable({
   providedIn: 'root'
