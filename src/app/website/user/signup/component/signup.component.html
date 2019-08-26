@@ -1,7 +1,7 @@
 <div class="container">
         <div class="jumbotron">
-            <form class="form-horizontal">
-                <div class="form-group" [formGroup]="addCustomer" (onSubmit)="createCustomer();">
+            <form class="form-horizontal" [formGroup]="signUpCustomerData">
+                <div class="form-group" (onSubmit)="createCustomer();">
                     <div class="col-sm-2"></div>
                     <label class="control-label col-sm-2" for="emailId">Email Id:</label>
                     <div class="col-sm-4">          
@@ -28,8 +28,8 @@
                 <div class="form-group">
                     <div class="col-sm-4"></div>
                     <div class="col-sm-4">          
-                        <label class="radio-inline"><input type="radio" name="genderRadio" formControlName="customerGender">Male</label>
-                        <label class="radio-inline"><input type="radio" name="genderRadio" formControlName="customerGender">Female</label>
+                        <label class="radio-inline"><input type="radio" name="customerGender" formControlName="customerGender">Male</label>
+                        <label class="radio-inline"><input type="radio" name="customerGender" formControlName="customerGender">Female</label>
                     </div>
                     <div class="col-sm-4"></div>
                 </div>
